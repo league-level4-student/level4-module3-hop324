@@ -32,6 +32,17 @@ class ExceptionsTest {
 	//3. Complete the JUnit test method to test the divide method.
 	@Test
 	public void testDivideByZeroException() {
+		double[] vars = {0.0, 1.0, 4.0, 5.0};
+		try {
+		assertEquals(5.0, new ExceptionMethods().divide(vars[3], vars[1]));
+		
+		assertEquals(1.0, new ExceptionMethods().divide(vars[3], vars[3]));
+		fail("Not poggers");
+		}
+		catch(IllegalArgumentException e) {
+			e.printStackTrace();
+			assertEquals(0.0, new ExceptionMethods().divide(vars[0], vars[0]));
+		}
 		
 	}
 	
@@ -42,7 +53,16 @@ class ExceptionsTest {
 	//5. Complete the JUnit test method to test the reverseStringMethod.
 	@Test
 	public void testReverseString() {
+		String poggies = "ooga";
+		String notPoggies = "";
 		
+		try {
+			assertEquals("agoo", new ExceptionMethods().reverseString(poggies));
+		}
+		catch(IllegalStateException e) {
+			e.printStackTrace();
+			assertEquals("", new ExceptionMethods().reverseString(notPoggies));
+		}
 	}
 	
 	
